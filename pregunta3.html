@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>conversion</title>
+    <title>pregunta3</title>
 </head>
 <body>
-    <input type = 'numero' placeholder='ingrese el valor en celsius' id='celsius'/>
-</br>
-    <input type = 'numero' placeholder='el valor en fharenheit es :' id='fharenheit' disabled/>
-    <input type=  'button' onclik='c2f()' value='convert'/>
+    <h1>Ingrese la cantidad de Grados Celsius</h1>
+    <input type="text" id="Celcius"></br>
+    <button onclick="Calcular()">Calcular</button>
+    <p id="Resultado"></p>
 </body>
 
 <script>
 
-    var cel =document.getElementById('celsius')
-    var far =document.getElementById('fahrenheit')
-
-    function c2f(){
-        far.value=(1.8*cel.value)+32
-        alert(cel.value+ 'celsius a fharenheit es:'+far.value+ 'fahrenheit')
+    function calcular(cel){
+         var resultado= (((9*cel)+160)/5);
+         return resultado
+    }
+    function Calcular(){
+          var resul=document.getElementById("Celcius").value;
+          var accion = calcular(resul);
+          document.getElementById("Resultado").innerHTML=resul+" grados C° es igual a "+ accion+" F°."
     }
 
 </script>
